@@ -12,6 +12,6 @@ export const Container = styled.div`
   border-radius: 10px;
 
   > img {
-    width: 200px;
+    width: 100px;
   }
 `;
