@@ -74,9 +74,9 @@ export const Container = styled.div`
 
     > img {
       position: relative;
-      bottom: 40px;
+      bottom: 50px;
       left: -10px;
-      width: 150px;
+      width: 180px;
     }
 
     > p {
