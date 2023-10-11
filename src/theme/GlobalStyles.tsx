@@ -14,7 +14,9 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+
+      font-family: 'Gabarito', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     #root{
@@ -22,6 +24,8 @@ export const GlobalStyle = createGlobalStyle`
       width: 100vw;
       height: 100vh;
       padding: 15px;
+
+      background-image: url('public/img/background.png');
     }
 
 
@@ -46,5 +50,9 @@ export const GlobalStyle = createGlobalStyle`
     h3 {
       font-size: 18px;
       font-weight: bold;
+    }
+
+    body {
+
     }
 `;
