@@ -10,15 +10,14 @@ export default function LeftSideBar() {
         </header>
 
         <main>
-          <h1>
-            Be part of the <span>atmosphere</span> matter where you are.
-          </h1>
-
-          <p>
-            Informações confiáveis e em tempo real sobre as condições
-            climáticas. Com uma interface intuitiva, você pode visualizar
-            facilmente previsões precisas, Planeje seu dia com confiança.
-          </p>
+          <span>
+            <h1>Be part of the atmosphere.</h1>
+            <p>
+              Informações confiáveis e em tempo real sobre as condições
+              climáticas. Com uma interface intuitiva, você pode visualizar
+              facilmente previsões precisas, Planeje seu dia com confiança.
+            </p>
+          </span>
         </main>
 
         <footer>

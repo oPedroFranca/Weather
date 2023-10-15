@@ -1,5 +1,26 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { colors } from '../../../theme/GlobalStyles';
+
+export const typingAnimation = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+export const blinkAnimation = keyframes`
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+  100% {
+    border-color: transparent;
+  }
+`;
 
 export const Container = styled.div`
   background: rgba(255, 255, 255, 0.23);
@@ -14,9 +35,9 @@ export const Container = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.271);
 
   padding: 15px;
 
@@ -40,28 +61,35 @@ export const Container = styled.div`
   > main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     height: 89%;
 
-    > h1 {
-      max-width: 460px;
-      color: white;
-      font-weight: 600;
-      font-size: 35px;
+    > span {
+      > h1 {
+        max-width: 460px;
+        color: white;
+        font-weight: 600;
+        font-size: 35px;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
 
-      margin-bottom: 20px;
-    }
+        border-right: 3px solid white;
 
-    > p {
-      color: ${colors.gray};
-      max-width: 460px;
+        animation:
+          ${typingAnimation} 2s steps(26),
+          ${blinkAnimation} 600ms infinite;
+      }
 
-      font-weight: 600;
-      font-size: 12px;
-
-      margin-bottom: 20px;
+      > p {
+        color: ${colors.gray};
+        max-width: 460px;
+        font-weight: 600;
+        font-size: 12px;
+        margin-top: 20px;
+      }
     }
   }
 
@@ -76,13 +104,14 @@ export const Container = styled.div`
       position: relative;
       bottom: 50px;
       left: -10px;
-      width: 180px;
+      width: 150px;
     }
 
     > p {
-      color: white;
+      color: ${colors.gray};
       font-weight: bold;
       font-size: 12px;
+      margin-top: 25px;
     }
   }
 `;
