@@ -1,23 +1,23 @@
-import { Container } from './style';
+import { Container, Header, Main } from './style';
 
 export default function LeftScreen() {
   return (
     <Container>
-      <header>
+      <Header>
         <span></span>
         <p>Undefined</p>
-      </header>
+      </Header>
 
-      <main>
+      <Main>
         <span>
-          <h1>Be part of the atmosphere.</h1>
+          <h1>Be part of the weather.</h1>
           <p>
             Reliable, real-time information about weather conditions. With an
             intuitive interface, you can easily view accurate forecasts, plan
             your day with confidence.
           </p>
         </span>
-      </main>
+      </Main>
 
       <footer>
         <img src={'public/img/umbrella.png'} />

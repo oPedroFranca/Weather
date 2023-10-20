@@ -23,7 +23,6 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${colors.dark_black};
       width: 100vw;
       height: 100vh;
-      padding: 15px;
 
       background-image: url('public/img/background.png');
     }

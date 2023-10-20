@@ -41,58 +41,6 @@ export const Container = styled.div`
 
   padding: 15px;
 
-  > header {
-    display: flex;
-    align-items: center;
-
-    font-weight: 600;
-    color: white;
-
-    > span {
-      background-color: white;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-
-      margin-right: 5px;
-    }
-  }
-
-  > main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    height: 89%;
-
-    > span {
-      > h1 {
-        max-width: 460px;
-        color: white;
-        font-weight: 600;
-        font-size: 35px;
-        overflow: hidden;
-        white-space: nowrap;
-        display: inline-block;
-
-        border-right: 3px solid white;
-
-        animation:
-          ${typingAnimation} 2s steps(26),
-          ${blinkAnimation} 600ms infinite;
-      }
-
-      > p {
-        color: ${colors.gray};
-        max-width: 460px;
-        font-weight: 600;
-        font-size: 12px;
-        margin-top: 20px;
-      }
-    }
-  }
-
   > footer {
     display: flex;
     align-items: center;
@@ -113,5 +61,81 @@ export const Container = styled.div`
       font-size: 12px;
       margin-top: 25px;
     }
+  }
+`;
+
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+
+  font-weight: 600;
+  color: white;
+
+  > span {
+    background-color: white;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+
+    margin-right: 5px;
+  }
+`;
+
+export const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 89%;
+
+  > span {
+    width: 440px;
+
+    > h1 {
+      max-width: 390px;
+      color: white;
+      font-weight: 600;
+      font-size: 35px;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+
+      border-right: 3px solid white;
+
+      animation:
+        ${typingAnimation} 2s steps(23),
+        ${blinkAnimation} 600ms infinite;
+    }
+
+    > p {
+      color: ${colors.gray};
+      max-width: 460px;
+      font-weight: 600;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  }
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+
+  > img {
+    position: relative;
+    bottom: 50px;
+    left: -10px;
+    width: 150px;
+  }
+
+  > p {
+    color: ${colors.gray};
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 25px;
   }
 `;

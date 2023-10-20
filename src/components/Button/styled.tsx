@@ -27,4 +27,13 @@ export const ButtonDiv = styled.div`
     0 0 3em 0.3em var(--glow-spread-color),
     inset 0 0 0.75em 0.25em var(--glow-color);
   text-shadow: 0 0 0.5em var(--glow-color);
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    --glow-spread-color: rgba(87, 15, 154, 0.9);
+    --glow-color: #674fb7;
+    background-color: #674fb7;
+    transform: scale(1.02);
+  }
 `;
