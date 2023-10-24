@@ -1,14 +1,16 @@
 import { WeatherComponent } from '../../api/weatherData';
-import { Container } from './style';
+import { Container, Header } from './style';
 
 export default function Weather() {
   return (
     <Container>
-      <header>
+      <Header>
         <input type="search" />
+      </Header>
 
+      <main>
         <WeatherComponent />
-      </header>
+      </main>
     </Container>
   );
 }
