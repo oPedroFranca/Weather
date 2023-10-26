@@ -53,4 +53,8 @@ export const Header = styled.div`
       box-shadow: 7px 7px 5px rgba(2, 2, 2, 0.324);
     }
   }
+
+  input[type='search']::-webkit-search-cancel-button {
+    display: none;
+  }
 `;
