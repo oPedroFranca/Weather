@@ -36,4 +36,27 @@ export const ButtonDiv = styled.div`
     background-color: #674fb7;
     transform: scale(1.02);
   }
+
+  &.buttonSearch {
+    background: rgba(255, 255, 255, 0.257);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.271);
+    box-shadow: 5px 5px 5px rgba(2, 2, 2, 0.283);
+
+    width: 25px;
+    font-size: 18px;
+    height: 30px;
+
+    border-radius: 0px 15px 15px 0px;
+    border-left: none;
+
+    &:focus {
+      transform: scale(1.02);
+
+      border: solid 1px ${colors.gray};
+      box-shadow: 7px 7px 5px rgba(2, 2, 2, 0.324);
+    }
+  }
 `;

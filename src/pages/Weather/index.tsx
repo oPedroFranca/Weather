@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { Container, Header } from './style';
+import React, { useEffect, useState } from 'react';
+import { Container, Header, Main } from './style';
 import { fetchWeatherData } from '../../api/weatherData'; // Importe a API daqui
+import Button from '../../components/Button';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 interface WeatherData {
   name: string;
@@ -23,7 +25,7 @@ interface WeatherData {
 
 export default function Weather() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState('Tupaciguara');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCity(e.target.value);
@@ -40,6 +42,10 @@ export default function Weather() {
       });
   };
 
+  useEffect(() => {
+    handleSearch();
+  }, []);
+
   return (
     <Container>
       <Header>
@@ -49,12 +55,23 @@ export default function Weather() {
           onChange={handleInputChange}
           placeholder="City"
         />
-        <button onClick={handleSearch}>Buscar</button>
+        <Button
+          onClick={() => {
+            handleSearch();
+          }}
+          className="buttonSearch"
+        >
+          <AiOutlineSearch />
+        </Button>
       </Header>
 
-      <main>
-        {weather ? <h2>{weather.main.temp}</h2> : <p>Digite a Cidade</p>}
-      </main>
+      <Main>
+        <div>{weather?.name}</div>
+        <div>
+          <img src="public/img/Sun.png" alt="" />
+        </div>
+        <div>{weather?.main.temp} C</div>
+      </Main>
     </Container>
   );
 }

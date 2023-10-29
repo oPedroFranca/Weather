@@ -8,8 +8,6 @@ export async function fetchWeatherData(city: string) {
     if (response.ok) {
       const data = await response.json();
       return data;
-    } else {
-      throw new Error('Erro ao buscar dados meteorológicos');
     }
   } catch (error) {
     throw new Error('Erro ao buscar dados meteorológicos: ' + error);
