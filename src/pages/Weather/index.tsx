@@ -54,6 +54,7 @@ export default function Weather() {
           value={city}
           onChange={handleInputChange}
           placeholder="City"
+          onFocus={() => setIsInputFocused(true)}
         />
         <Button
           onClick={() => {

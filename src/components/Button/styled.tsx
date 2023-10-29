@@ -51,12 +51,5 @@ export const ButtonDiv = styled.div`
 
     border-radius: 0px 15px 15px 0px;
     border-left: none;
-
-    &:focus {
-      transform: scale(1.02);
-
-      border: solid 1px ${colors.gray};
-      box-shadow: 7px 7px 5px rgba(2, 2, 2, 0.324);
-    }
   }
 `;
