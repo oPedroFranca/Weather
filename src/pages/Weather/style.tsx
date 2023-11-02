@@ -32,7 +32,7 @@ export const Header = styled.div`
 
     color: white;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
 
     border-radius: 15px 0 0 15px;
     border-right: none;
@@ -50,15 +50,6 @@ export const Header = styled.div`
     &::placeholder {
       color: white;
     }
-
-    &:focus {
-      transform: scale(1.02);
-
-      border: solid 1px ${colors.gray};
-      border-right: none;
-
-      box-shadow: 0px 7px 5px rgba(2, 2, 2, 0.324);
-    }
   }
 
   input[type='search']::-webkit-search-cancel-button {
@@ -69,17 +60,31 @@ export const Header = styled.div`
 export const Main = styled.div`
   display: flex;
   width: 100%;
+  padding-left: 10px;
 
   > div {
-    background-color: black;
-
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
     width: 100%;
     height: 100%;
+    font-size: 20px;
+
+    margin-top: 20px;
+    padding-left: 10px;
+
+    > p {
+      font-size: 25px;
+      margin-top: 40px;
+      font-weight: 600;
+    }
 
     &:nth-child(2) {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-left: 0px;
+
       > img {
         width: 200px;
       }
@@ -87,7 +92,7 @@ export const Main = styled.div`
 
     &:nth-child(3) {
       display: flex;
-      justify-content: center;
+      padding-left: 10px;
     }
   }
 `;

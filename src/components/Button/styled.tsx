@@ -38,18 +38,20 @@ export const ButtonDiv = styled.div`
   }
 
   &.buttonSearch {
-    background: rgba(255, 255, 255, 0.257);
+    background: rgba(255, 255, 255, 0.237);
     border-radius: 16px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.271);
     box-shadow: 5px 5px 5px rgba(2, 2, 2, 0.283);
-
     width: 25px;
     font-size: 18px;
     height: 30px;
-
     border-radius: 0px 15px 15px 0px;
     border-left: none;
+
+    &:hover {
+      transform: scale(1);
+    }
   }
 `;

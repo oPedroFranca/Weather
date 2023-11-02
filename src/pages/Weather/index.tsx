@@ -3,6 +3,7 @@ import { Container, Header, Main } from './style';
 import { fetchWeatherData } from '../../api/weatherData'; // Importe a API daqui
 import Button from '../../components/Button';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { MdLocationOn } from 'react-icons/md';
 
 interface WeatherData {
   name: string;
@@ -66,7 +67,12 @@ export default function Weather() {
       </Header>
 
       <Main>
-        <div>{weather?.name}</div>
+        <div>
+          <span>
+            <MdLocationOn /> {weather?.name}
+          </span>
+          <p>date</p>
+        </div>
         <div>
           <img src="public/img/Sun.png" alt="" />
         </div>
