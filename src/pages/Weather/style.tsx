@@ -59,12 +59,14 @@ export const Header = styled.div`
 
 export const Main = styled.div`
   display: flex;
-  width: 100%;
+  width: 50%;
+  min-width: 700px;
   padding-left: 10px;
 
   > div {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-weight: 500;
     width: 100%;
     height: 100%;
@@ -72,6 +74,11 @@ export const Main = styled.div`
 
     margin-top: 20px;
     padding-left: 10px;
+
+    > span {
+      display: flex;
+      align-items: center;
+    }
 
     > p {
       font-size: 25px;
@@ -86,7 +93,7 @@ export const Main = styled.div`
       padding-left: 0px;
 
       > img {
-        width: 200px;
+        width: 250px;
       }
     }
 
@@ -95,4 +102,15 @@ export const Main = styled.div`
       padding-left: 10px;
     }
   }
+`;
+
+export const WeekDay = styled.p`
+  font-size: 18px;
+`;
+
+export const LocationIcon = styled.span`
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  margin-right: 8px;
 `;
