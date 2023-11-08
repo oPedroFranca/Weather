@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { format } from 'date-fns'; // Importe a função format do date-fns
+import { format } from 'date-fns';
 import { Container, Header, LocationIcon, Main, WeekDay } from './style';
 import { fetchWeatherData } from '../../api/weatherData';
 import Button from '../../components/Button';
@@ -35,27 +35,28 @@ export default function Weather() {
     setCity(e.target.value);
   };
 
-  const handleSearch = () => {
-    fetchWeatherData(city)
-      .then((result) => {
-        setWeather(result);
-        console.log(result);
+  const handleSearch = async () => {
+    try {
+      const result = await fetchWeatherData(city);
+      setWeather(result);
 
-        // Obtém a data atual usando date-fns
-        const today = new Date();
-        const formattedDate = format(today, 'MMMM d');
-        const day = format(today, 'EEEE');
-        setCurrentDate(formattedDate);
-        setWeekDay(day);
-      })
-      .catch((error) => {
-        console.error('Erro ao buscar dados meteorológicos:', error);
-      });
+      const today = new Date();
+      setCurrentDate(format(today, 'MMMM d'));
+      setWeekDay(format(today, 'EEEE'));
+    } catch (error) {
+      console.error('Erro ao buscar dados meteorológicos:', error);
+    }
   };
 
   useEffect(() => {
     handleSearch();
   }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
     <Container>
@@ -64,14 +65,10 @@ export default function Weather() {
           type="search"
           value={city}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
           placeholder="City"
         />
-        <Button
-          onClick={() => {
-            handleSearch();
-          }}
-          className="buttonSearch"
-        >
+        <Button onClick={handleSearch} className="buttonSearch">
           <AiOutlineSearch />
         </Button>
       </Header>

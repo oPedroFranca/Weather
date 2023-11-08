@@ -73,7 +73,6 @@ export const Main = styled.div`
     font-size: 20px;
 
     margin-top: 20px;
-    padding-left: 10px;
 
     > span {
       display: flex;
@@ -90,7 +89,6 @@ export const Main = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-left: 0px;
 
       > img {
         width: 250px;
@@ -99,7 +97,8 @@ export const Main = styled.div`
 
     &:nth-child(3) {
       display: flex;
-      padding-left: 10px;
+      font-size: 20px;
+      font-weight: 600;
     }
   }
 `;
