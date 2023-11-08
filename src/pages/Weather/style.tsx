@@ -96,11 +96,33 @@ export const Main = styled.div`
     }
 
     &:nth-child(3) {
-      display: flex;
-      font-size: 20px;
-      font-weight: 600;
     }
   }
+`;
+
+export const Temperature = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: row;
+
+  font-size: 35px;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+
+  > img {
+    margin-right: 12px;
+    width: 30px;
+  }
+`;
+
+export const InfoWeather = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
 `;
 
 export const WeekDay = styled.p`

@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';
-import { Container, Header, LocationIcon, Main, WeekDay } from './style';
+import {
+  Container,
+  Header,
+  InfoWeather,
+  LocationIcon,
+  Main,
+  Temperature,
+  WeekDay,
+} from './style';
 import { fetchWeatherData } from '../../api/weatherData';
 import Button from '../../components/Button';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -9,11 +17,11 @@ import { MdLocationOn } from 'react-icons/md';
 interface WeatherData {
   name: string;
   visibility: number;
+  precipitation: number;
   main: {
     temp: number;
     pressure: number;
     humidity: number;
-    precipitation: number;
   };
   wind: {
     speed: number;
@@ -88,7 +96,19 @@ export default function Weather() {
         <div>
           <img src="public/img/Sun.png" alt="" />
         </div>
-        <div>{weather?.main.temp} C</div>
+        <div>
+          <Temperature>
+            <img src="public/img/thermometerHot.png" alt="" />
+            {weather && weather.main ? Math.round(weather.main.temp) : 'N/A'} °C
+          </Temperature>
+
+          <InfoWeather>
+            <span>Humidity, % {weather?.main.humidity}</span>
+            <span>Visibility, % {weather?.visibility}</span>
+            <span>Wind, m/s {weather?.wind.speed}</span>
+            <span>Pressure, mm {weather?.main.pressure}</span>
+          </InfoWeather>
+        </div>
       </Main>
     </Container>
   );
