@@ -18,6 +18,11 @@ interface WeatherData {
   name: string;
   visibility: number;
   precipitation: number;
+  weather: [
+    {
+      main: string;
+    },
+  ];
   main: {
     temp: number;
     pressure: number;
@@ -34,7 +39,7 @@ interface WeatherData {
 }
 
 export default function Weather() {
-  const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weatherApi, setWeatherApi] = useState<WeatherData | null>(null);
   const [city, setCity] = useState('Tupaciguara');
   const [currentDate, setCurrentDate] = useState<string>('');
   const [weekDay, setWeekDay] = useState<string>('');
@@ -46,7 +51,7 @@ export default function Weather() {
   const handleSearch = async () => {
     try {
       const result = await fetchWeatherData(city);
-      setWeather(result);
+      setWeatherApi(result);
 
       const today = new Date();
       setCurrentDate(format(today, 'MMMM d'));
@@ -64,6 +69,14 @@ export default function Weather() {
     if (e.key === 'Enter') {
       handleSearch();
     }
+  };
+
+  const weatherIconMap: { [key: string]: string } = {
+    Rain: 'public/img/Rain.png',
+    Clouds: 'public/img/Clouds.png',
+    Clear: 'public/img/Clear.png',
+    Thunderstorm: 'public/img/Thunderstorm.png',
+    Snow: 'public/img/Snow.png',
   };
 
   return (
@@ -87,26 +100,47 @@ export default function Weather() {
             <LocationIcon>
               <MdLocationOn />
             </LocationIcon>
-            {weather?.name}
+            {weatherApi?.name}
           </span>
           <p>
             {currentDate} <WeekDay>{weekDay}</WeekDay>
           </p>
         </div>
         <div>
-          <img src="public/img/Sun.png" alt="" />
+          <img
+            src={
+              weatherApi
+                ? weatherIconMap[weatherApi.weather[0].main]
+                : 'public/img/Sun.png'
+            }
+            alt=""
+          />
         </div>
         <div>
           <Temperature>
             <img src="public/img/thermometerHot.png" alt="" />
-            {weather && weather.main ? Math.round(weather.main.temp) : 'N/A'} °C
+            {weatherApi && weatherApi.main
+              ? Math.round(weatherApi.main.temp)
+              : 'N/A'}
+            °C
           </Temperature>
 
           <InfoWeather>
-            <span>Humidity, % {weather?.main.humidity}</span>
-            <span>Visibility, % {weather?.visibility}</span>
-            <span>Wind, m/s {weather?.wind.speed}</span>
-            <span>Pressure, mm {weather?.main.pressure}</span>
+            <span>
+              Humidity, <strong>% {weatherApi?.main.humidity}</strong>
+            </span>
+            <span>
+              Visibility, <strong>% {weatherApi?.visibility}</strong>
+            </span>
+            <span>
+              Wind, <strong>m/s {weatherApi?.wind.speed}</strong>
+            </span>
+            <span>
+              Pressure, <strong>mm {weatherApi?.main.pressure}</strong>
+            </span>
+            <span>
+              Climate, <strong> {weatherApi?.weather[0].main}</strong>
+            </span>
           </InfoWeather>
         </div>
       </Main>

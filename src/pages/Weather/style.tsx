@@ -80,7 +80,7 @@ export const Main = styled.div`
     }
 
     > p {
-      font-size: 25px;
+      font-size: 30px;
       margin-top: 40px;
       font-weight: 600;
     }
@@ -91,7 +91,7 @@ export const Main = styled.div`
       justify-content: center;
 
       > img {
-        width: 250px;
+        width: 270px;
       }
     }
 
@@ -123,6 +123,10 @@ export const InfoWeather = styled.div`
   flex-direction: column;
   font-size: 14px;
   font-weight: 500;
+
+  > span {
+    margin-bottom: 10px;
+  }
 `;
 
 export const WeekDay = styled.p`
