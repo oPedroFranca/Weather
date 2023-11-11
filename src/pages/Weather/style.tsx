@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { colors } from '../../theme/GlobalStyles';
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-rows: auto 1fr;
   align-items: center;
-  flex-direction: column;
+  justify-items: center;
 
   width: 100%;
   height: 100%;

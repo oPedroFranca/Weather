@@ -3,6 +3,7 @@ import Button from '../../components/Button';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useWeatherData } from './useWeatherData';
 import { WeatherDetails } from '../../components/WeatherDetails.tsx';
+import WeatherCardsDay from '../../components/WeatherCard/index.tsx';
 
 export default function Weather() {
   const { weatherApi, city, currentDate, weekDay, setCity, handleSearch } =
@@ -34,6 +35,12 @@ export default function Weather() {
       </Header>
 
       <WeatherDetails
+        weatherApi={weatherApi}
+        currentDate={currentDate}
+        weekDay={weekDay}
+      />
+
+      <WeatherCardsDay
         weatherApi={weatherApi}
         currentDate={currentDate}
         weekDay={weekDay}

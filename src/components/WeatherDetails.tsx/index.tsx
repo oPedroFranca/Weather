@@ -1,7 +1,7 @@
 import { MdLocationOn } from 'react-icons/md';
 import { InfoWeather, LocationIcon, Main, Temperature, WeekDay } from './style';
 
-const weatherIconMap: { [key: string]: string } = {
+export const weatherIconMap: { [key: string]: string } = {
   Rain: 'public/img/Rain.png',
   Clouds: 'public/img/Clouds.png',
   Clear: 'public/img/Clear.png',
@@ -9,13 +9,13 @@ const weatherIconMap: { [key: string]: string } = {
   Snow: 'public/img/Snow.png',
 };
 
-interface WeatherDetailsProps {
+export interface WeatherDetailsProps {
   weatherApi: WeatherData | null;
   currentDate: string;
   weekDay: string;
 }
 
-interface WeatherData {
+export interface WeatherData {
   name: string;
   visibility: number;
   precipitation: number;
@@ -62,7 +62,7 @@ export function WeatherDetails({
           src={
             weatherApi
               ? weatherIconMap[weatherApi.weather[0].main]
-              : 'public/img/Sun.png'
+              : 'public/img/Clear.png'
           }
           alt=""
         />
