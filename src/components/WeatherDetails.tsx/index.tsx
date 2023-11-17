@@ -13,6 +13,7 @@ export interface WeatherDetailsProps {
   weatherApi: WeatherData | null;
   currentDate: string;
   weekDay: string;
+  city?: string;
 }
 
 export interface WeatherData {

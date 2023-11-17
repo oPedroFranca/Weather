@@ -10,4 +10,8 @@ export async function fetchWeatherData(city: string) {
   } else {
     throw new Error('Erro ao buscar dados meteorológicos: ');
   }
+
+  fetch(
+    `${weatherApi.baseURL}/forecast/daily?q=${city}&units=metric&cnt=7&APPID=${weatherApi.apiKey}`,
+  );
 }

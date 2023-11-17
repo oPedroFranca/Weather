@@ -9,10 +9,6 @@ export default function Weather() {
   const { weatherApi, city, currentDate, weekDay, setCity, handleSearch } =
     useWeatherData('Tupaciguara');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCity(e.target.value);
-  };
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleSearch();
@@ -25,7 +21,10 @@ export default function Weather() {
         <input
           type="search"
           value={city}
-          onChange={handleInputChange}
+          onChange={(e) => {
+            setCity(e.target.value);
+            handleSearch();
+          }}
           onKeyDown={handleKeyDown}
           placeholder="City"
         />
@@ -44,6 +43,7 @@ export default function Weather() {
         weatherApi={weatherApi}
         currentDate={currentDate}
         weekDay={weekDay}
+        city={city}
       />
     </Container>
   );
