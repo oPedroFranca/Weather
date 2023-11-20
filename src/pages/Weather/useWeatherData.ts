@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchWeatherData } from '../../api/weatherData';
 import { format } from 'date-fns';
 
-interface WeatherData {
+export interface WeatherData {
   name: string;
   visibility: number;
   precipitation: number;

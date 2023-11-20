@@ -1,5 +1,6 @@
 import { MdLocationOn } from 'react-icons/md';
 import { InfoWeather, LocationIcon, Main, Temperature, WeekDay } from './style';
+import { WeatherData } from '../../pages/Weather/useWeatherData';
 
 export const weatherIconMap: { [key: string]: string } = {
   Rain: 'public/img/Rain.png',
@@ -15,30 +16,6 @@ export interface WeatherDetailsProps {
   weekDay: string;
   city?: string;
   searchCalled?: boolean;
-}
-
-export interface WeatherData {
-  name: string;
-  visibility: number;
-  precipitation: number;
-  weather: [
-    {
-      main: string;
-    },
-  ];
-  main: {
-    temp: number;
-    pressure: number;
-    humidity: number;
-  };
-  wind: {
-    speed: number;
-    direction: {
-      value: number;
-      code: string;
-      name: string;
-    };
-  };
 }
 
 export function WeatherDetails({
