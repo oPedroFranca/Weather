@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
+  max-width: 800px;
   height: 130px;
   margin-bottom: 40px;
 `;
@@ -12,12 +13,11 @@ export const Container = styled.div`
 export const CardDay = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   padding-top: 5px;
   padding-bottom: 5px;
   flex-direction: column;
 
-  width: 90px;
+  min-width: 90px;
   height: 120px;
 
   background: rgba(255, 255, 255, 0.207);
@@ -29,10 +29,10 @@ export const CardDay = styled.div`
 
   border-radius: 8px;
 
-  margin-left: 25px;
-
   > img {
     width: 50px;
+    height: 50px;
+    object-fit: contain;
   }
 
   > p {

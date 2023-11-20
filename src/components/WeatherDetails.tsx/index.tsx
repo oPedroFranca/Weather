@@ -14,6 +14,7 @@ export interface WeatherDetailsProps {
   currentDate: string;
   weekDay: string;
   city?: string;
+  searchCalled?: boolean;
 }
 
 export interface WeatherData {
@@ -70,7 +71,16 @@ export function WeatherDetails({
       </div>
       <div>
         <Temperature>
-          <img src="public/img/thermometerHot.png" alt="" />
+          <img
+            src={
+              weatherApi && weatherApi.main
+                ? Math.round(weatherApi.main.temp) < 15
+                  ? 'public/img/thermometerIce.png'
+                  : 'public/img/thermometerHot.png'
+                : 'public/img/thermometerHot.png'
+            }
+            alt=""
+          />
           {weatherApi && weatherApi.main
             ? Math.round(weatherApi.main.temp)
             : 'N/A'}

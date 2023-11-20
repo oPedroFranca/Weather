@@ -5,6 +5,7 @@ import { weatherApi } from './weatherApi';
 export interface Weather {
   temperature: number;
   description: string;
+  climate: string;
 }
 
 export const fetchWeatherDays = async (city: string): Promise<Weather[]> => {
@@ -16,7 +17,7 @@ export const fetchWeatherDays = async (city: string): Promise<Weather[]> => {
           q: city,
           appid: weatherApi.apiKey,
           units: 'metric',
-          lang: 'pt_br',
+          lang: 'en',
         },
       },
     );
@@ -24,6 +25,7 @@ export const fetchWeatherDays = async (city: string): Promise<Weather[]> => {
     const data: Weather[] = response.data.list.map((item: any) => ({
       temperature: item.main.temp,
       description: item.weather[0].description,
+      climate: item.weather[0].main,
     }));
 
     return data;

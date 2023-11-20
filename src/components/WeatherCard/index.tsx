@@ -9,6 +9,7 @@ export default function WeatherCardsDay({
   currentDate,
   weekDay,
   city,
+  searchCalled,
 }: WeatherDetailsProps) {
   let nextDay = weekDay;
   let nextDate = new Date(currentDate);
@@ -22,7 +23,7 @@ export default function WeatherCardsDay({
     };
 
     fetchWeatherData();
-  }, [city]);
+  }, [searchCalled]);
 
   return (
     <Container>
@@ -40,7 +41,7 @@ export default function WeatherCardsDay({
             <img
               src={
                 weather
-                  ? weatherIconMap[weather.description]
+                  ? weatherIconMap[weather.climate]
                   : 'public/img/Clear.png'
               }
               alt=""

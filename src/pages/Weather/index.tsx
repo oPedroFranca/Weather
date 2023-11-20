@@ -4,14 +4,18 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { useWeatherData } from './useWeatherData';
 import { WeatherDetails } from '../../components/WeatherDetails.tsx';
 import WeatherCardsDay from '../../components/WeatherCard/index.tsx';
+import { useState } from 'react';
 
 export default function Weather() {
   const { weatherApi, city, currentDate, weekDay, setCity, handleSearch } =
     useWeatherData('Tupaciguara');
 
+  const [searchCalled, setSearchCalled] = useState(false);
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleSearch();
+      setSearchCalled(!searchCalled);
     }
   };
 
@@ -23,12 +27,17 @@ export default function Weather() {
           value={city}
           onChange={(e) => {
             setCity(e.target.value);
-            handleSearch();
           }}
           onKeyDown={handleKeyDown}
           placeholder="City"
         />
-        <Button onClick={handleSearch} className="buttonSearch">
+        <Button
+          onClick={() => {
+            handleSearch();
+            setSearchCalled(!searchCalled);
+          }}
+          className="buttonSearch"
+        >
           <AiOutlineSearch />
         </Button>
       </Header>
@@ -44,6 +53,7 @@ export default function Weather() {
         currentDate={currentDate}
         weekDay={weekDay}
         city={city}
+        searchCalled={searchCalled}
       />
     </Container>
   );

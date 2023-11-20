@@ -57,7 +57,7 @@ export const Temperature = styled.div`
 
   > img {
     margin-right: 12px;
-    width: 30px;
+    width: 28px;
   }
 `;
 
