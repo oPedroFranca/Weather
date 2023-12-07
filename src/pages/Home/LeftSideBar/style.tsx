@@ -41,26 +41,8 @@ export const Container = styled.div`
 
   padding: 15px;
 
-  > footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 10%;
-
-    > img {
-      position: relative;
-      bottom: 50px;
-      left: -10px;
-      width: 150px;
-    }
-
-    > p {
-      color: ${colors.gray};
-      font-weight: bold;
-      font-size: 12px;
-      margin-top: 25px;
-    }
+  @media (max-width: 649px) {
+    display: none;
   }
 `;
 
@@ -90,7 +72,7 @@ export const Main = styled.div`
   height: 89%;
 
   > span {
-    width: 440px;
+    width: auto;
 
     > h1 {
       max-width: 390px;
@@ -116,6 +98,13 @@ export const Main = styled.div`
       margin-top: 20px;
     }
   }
+
+  @media (max-width: 870px) {
+    span > h1 {
+      font-size: 25px;
+      max-width: 281px;
+    }
+  }
 `;
 
 export const Footer = styled.div`
@@ -136,6 +125,13 @@ export const Footer = styled.div`
     color: ${colors.gray};
     font-weight: bold;
     font-size: 12px;
-    margin-top: 25px;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+
+  @media (max-height: 459px) {
+    img {
+      display: none;
+    }
   }
 `;

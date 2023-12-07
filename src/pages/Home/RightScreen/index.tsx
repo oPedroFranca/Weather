@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../../components/Button';
 import { Container } from './style';
 
@@ -13,7 +14,9 @@ export default function RightScreen() {
       <h1>Breeze</h1>
       <p>Weather App</p>
 
-      <Button onClick={handleButtonClick}>Get Started</Button>
+      <Link to="/weather">
+        <Button onClick={handleButtonClick}>Get Started</Button>
+      </Link>
     </Container>
   );
 }

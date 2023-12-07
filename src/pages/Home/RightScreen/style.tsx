@@ -13,6 +13,13 @@ export const Container = styled.div`
 
   padding: 15px;
 
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   > img {
     width: 50px;
   }
@@ -29,5 +36,9 @@ export const Container = styled.div`
     font-size: 12px;
 
     margin-bottom: 50px;
+  }
+
+  @media (max-width: 649px) {
+    width: 100%;
   }
 `;

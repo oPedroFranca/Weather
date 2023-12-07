@@ -15,6 +15,8 @@ export const Container = styled.div`
   background-image: url(public/img/mesh-gradient.png);
   background-size: 100% 100%;
   background-position: center;
+
+  overflow: hidden;
 `;
 
 export const Header = styled.div`

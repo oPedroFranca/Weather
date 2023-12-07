@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 
       font-family: 'Gabarito', sans-serif;
       font-family: 'Inter', sans-serif;
+
     }
 
     #root{
@@ -25,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
       height: 100vh;
 
       background-image: url('public/img/background.png');
+
     }
 
 
@@ -51,7 +53,4 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: bold;
     }
 
-    body {
-
-    }
 `;
