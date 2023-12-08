@@ -28,7 +28,8 @@ export const CardDay = styled.div`
   box-shadow: 0px 5px 5px rgba(2, 2, 2, 0.283);
 
   border-radius: 8px;
-  z > img {
+
+  > img {
     width: 50px;
     height: 50px;
     object-fit: contain;
