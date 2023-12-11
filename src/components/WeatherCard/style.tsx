@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../theme/GlobalStyles';
 
 export const Container = styled.div`
   display: flex;
@@ -6,8 +7,25 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 800px;
-  height: 130px;
+  height: 140px;
   margin-bottom: 40px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    padding: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${colors.purple};
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${colors.white_black};
+  }
 `;
 
 export const CardDay = styled.div`
@@ -28,6 +46,9 @@ export const CardDay = styled.div`
   box-shadow: 0px 5px 5px rgba(2, 2, 2, 0.283);
 
   border-radius: 8px;
+
+  margin-right: 5px;
+  margin-left: 5px;
 
   > img {
     width: 50px;

@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const Main = styled.div`
   display: flex;
-  width: 50%;
-  min-width: 700px;
+  width: 500px;
   padding-left: 10px;
 
   > div {
@@ -16,7 +15,7 @@ export const Main = styled.div`
     font-size: 20px;
 
     margin-top: 20px;
-
+    margin-right: 10px;
     > span {
       display: flex;
       align-items: center;
