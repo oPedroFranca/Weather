@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Main = styled.div`
   display: flex;
-  width: 500px;
+  max-width: 700px;
+  width: 100%;
   padding-left: 10px;
 
   > div {
@@ -16,6 +17,7 @@ export const Main = styled.div`
 
     margin-top: 20px;
     margin-right: 10px;
+    margin-left: 10px;
     > span {
       display: flex;
       align-items: center;

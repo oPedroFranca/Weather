@@ -26,7 +26,8 @@ export const GlobalStyle = createGlobalStyle`
       height: 100vh;
 
       background-image: url('public/img/background.png');
-
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
 
